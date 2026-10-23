@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Micro-ondas</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🍿 Micro-ondas</h1>
+        <p>Escolha o tempo</p>
+
+        <!-- Visor do micro-ondas -->
+        <div class="timer">
+            <span id="tempo">00</span>
+            <small>segundos</small>
+        </div>
+
+        <!-- Campo que mostra os números digitados -->
+        <label for="segundos">Tempo escolhido:</label>
+
+        <input
+            type="text"
+            id="segundos"
+            value="00"
+            readonly
+        >
+
+        <!-- Teclado numérico -->
+        <div class="teclado">
+
+            <button type="button" onclick="digitarNumero('1')">1</button>
+            <button type="button" onclick="digitarNumero('2')">2</button>
+            <button type="button" onclick="digitarNumero('3')">3</button>
+
+            <button type="button" onclick="digitarNumero('4')">4</button>
+            <button type="button" onclick="digitarNumero('5')">5</button>
+            <button type="button" onclick="digitarNumero('6')">6</button>
+
+            <button type="button" onclick="digitarNumero('7')">7</button>
+            <button type="button" onclick="digitarNumero('8')">8</button>
+            <button type="button" onclick="digitarNumero('9')">9</button>
+
+            <button type="button" class="apagar"
+                    onclick="limparTempo()">LIMPAR</button>
+
+            <button type="button" onclick="digitarNumero('0')">0</button>
+
+            <button type="button" class="apagar"
+                    onclick="apagarNumero()">⌫</button>
+
+        </div>
+
+        <!-- Botão para iniciar -->
+        <button type="button" class="iniciar"
+                onclick="iniciarMicroondas()">
+            ▶ INICIAR
+        </button>
+
+        <!-- Status -->
+        <div class="status">
+            Status:
+            <strong id="status">PARADO</strong>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
